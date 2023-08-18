@@ -1,6 +1,4 @@
-import React from 'react';
 import { HomeSvg, TruckSvg, ProjectSvg, BankNotesSvg, ChartBarSvg, CurrencySvg, CreditCardSvg, StoreFrontSvg } from './svgs';
-
 
 const SelectionButton = ({ imgBtn, buttonLabel }) => {
 
