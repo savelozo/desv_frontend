@@ -9,7 +9,7 @@ const Home_page = () => {
     <div>
       <div className="flex flex-col items-center justify-center h-screen">
         <ButtonGrid />
-        <EvaluameButton />
+        <EvaluameButton buttonKey={100}/>
       </div>  
     </div>
 
