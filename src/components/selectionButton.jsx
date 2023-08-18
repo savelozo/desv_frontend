@@ -10,9 +10,9 @@ const SelectionButton = ({ imgBtn, buttonLabel }) => {
     <button
         key={imgBtn - 1}
         className="flex items-center justify-center bg-white hover:bg-slate-300 text-sky-600 font-semibold py-2 px-4 rounded">
-        <div className="flex flex-col items-center">        
+        <div className="flex flex-col items-center" key={imgBtn - 1}>        
             {svg_list[imgBtn - 1]}
-            <span className="mt-2">{buttonLabel}</span>
+            <span className="mt-2" key={imgBtn - 1}>{buttonLabel}</span>
         </div>
     </button>
   );
