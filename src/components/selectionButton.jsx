@@ -4,7 +4,7 @@ import { HomeSvg, TruckSvg, ProjectSvg, BankNotesSvg, ChartBarSvg, CurrencySvg, 
 
 const svg_list = [<HomeSvg/>,<TruckSvg />,<ProjectSvg />,<BankNotesSvg/>,<ChartBarSvg/>,<CurrencySvg/>,<CreditCardSvg/>,<StoreFrontSvg/>]
 
-const SelectionButton = ({ imgBtn, buttonLabel }) => {
+const SelectionButton = ({ imgBtn, buttonLabel, buttonsStatus }) => {
   const [isSelected, setIsSelected] = useState(false);
 
   const handleClick = () => {
