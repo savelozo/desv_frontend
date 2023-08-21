@@ -1,10 +1,10 @@
 
 import React from 'react';
 
-const EvaluameButton = ({ buttonKey }) => {
+const EvaluameButton = ({ buttonKey, buttonsStatus }) => {
 
     const handleButtonClick = () => {
-        // Lógica para manejar el clic del botón
+      console.log(buttonsStatus)
         };
 
   return (
