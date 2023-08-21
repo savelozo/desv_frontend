@@ -1,16 +1,17 @@
 'use client'
-import React from 'react';
+import React, { useState } from 'react';
 import ButtonsGrid from './buttonsGrid';
+import EvaluameForm from './formEvaluation';
 
 const Home_page = () => {
 
-  return (
-    <div>
-      <div className="flex flex-col items-center justify-center h-screen">
-        <ButtonsGrid />
-      </div>  
-    </div>
+  const [evaluameStatus, setEvaluameStatus] = useState(true);
 
+  return (
+      <div className="flex flex-col items-center justify-center h-screen">
+        {evaluameStatus ? <ButtonsGrid setEvaluameStatus={setEvaluameStatus}/>:
+         <EvaluameForm />}
+      </div>  
   );
 };
 

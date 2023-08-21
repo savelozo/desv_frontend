@@ -8,7 +8,7 @@ import EvaluameButton from './evaluameButton';
     'Inversión', 'Ahorro', 'Reunificación de deuda', 'Comenzar negocio'
   ];
 
-const ButtonsGrid = () => {
+const ButtonsGrid = ( { setEvaluameStatus } ) => {
 
   const [buttonsStatus, setButtonsStatus] = useState(Array(buttonsLabel.length).fill(false));
 
@@ -32,7 +32,9 @@ const ButtonsGrid = () => {
         ))}        
       </div>
       <div className="flex justify-center">
-        <EvaluameButton buttonKey={999} buttonsStatus={buttonsStatus}/>
+        <EvaluameButton buttonKey={999} 
+            buttonsStatus={buttonsStatus} 
+            setEvaluameStatus={setEvaluameStatus}/>
       </div>
     </div>
   );
