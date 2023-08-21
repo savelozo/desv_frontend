@@ -4,16 +4,17 @@ import { HomeSvg, TruckSvg, ProjectSvg, BankNotesSvg, ChartBarSvg, CurrencySvg, 
 
 const svg_list = [<HomeSvg/>,<TruckSvg />,<ProjectSvg />,<BankNotesSvg/>,<ChartBarSvg/>,<CurrencySvg/>,<CreditCardSvg/>,<StoreFrontSvg/>]
 
-const SelectionButton = ({ imgBtn, buttonLabel, buttonsStatus }) => {
+const SelectionButton = ({ imgBtn, buttonLabel, changeStatusButton }) => {
   const [isSelected, setIsSelected] = useState(false);
 
-  const handleClick = () => {
+  const handleClick = (index) => {
     setIsSelected(!isSelected);
+    changeStatusButton(index)
   };
 
   return (
     <button
-      onClick={handleClick}
+      onClick={() => handleClick(imgBtn - 1)}
       className={`flex items-center justify-center ${
         isSelected ? 'bg-slate-400' : 'bg-white hover:bg-slate-300'
       } text-sky-600 font-semibold py-2 px-4 rounded`}

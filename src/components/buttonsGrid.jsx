@@ -3,13 +3,14 @@ import React, { useState } from 'react';
 import SelectionButton from './selectionButton';
 import EvaluameButton from './evaluameButton';
 
-const ButtonsGrid = () => {
   const buttonsLabel = [
     'Casa', 'Auto', 'Quinchito', 'Jubilación',
     'Inversión', 'Ahorro', 'Reunificación de deuda', 'Comenzar negocio'
   ];
 
-  const [buttonsStatus, setButtonsStatus] = useState(Array(buttonsLabel.length).fill(0));
+const ButtonsGrid = () => {
+
+  const [buttonsStatus, setButtonsStatus] = useState(Array(buttonsLabel.length).fill(false));
 
   const handleButtonStatusChange = (index) => {
     const newButtonsStatus = [...buttonsStatus];
@@ -26,12 +27,12 @@ const ButtonsGrid = () => {
             imgBtn={index + 1}
             buttonLabel={label}
             isActive={buttonsStatus[index]}
-            onStatusChange={() => handleButtonStatusChange(index)}
+            changeStatusButton={handleButtonStatusChange}
           />
         ))}        
       </div>
       <div className="flex justify-center">
-        <EvaluameButton buttonKey={999} />
+        <EvaluameButton buttonKey={999} buttonsStatus={buttonsStatus}/>
       </div>
     </div>
   );
