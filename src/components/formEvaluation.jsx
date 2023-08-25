@@ -1,4 +1,5 @@
 import React from 'react';
+import EvaluameFormButton from './forms-components/evaluameButtonForm';
 
 const EvaluameForm = () => {
   return (
@@ -22,9 +23,7 @@ const EvaluameForm = () => {
             <label htmlFor="birthdate" className="block font-medium mb-2">Fecha de Nacimiento</label>
             <input type="date" id="birthdate" className="w-full border rounded px-3 py-2" />
           </div>
-          <button type="submit" className="bg-blue-500 text-white font-semibold py-2 px-4 rounded w-full hover:bg-blue-600">
-            Enviar datos
-          </button>
+          <EvaluameFormButton formData={{1:'hola'}} />
         </form>
       </div>
     </div>
