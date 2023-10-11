@@ -6,7 +6,7 @@ const EvaluameFormButton = ({ formData, isActive, setIsActive }) => {
     const handleButtonClick = async (e) => {
       e.preventDefault();
       console.log("Enviando datos...")
-      setIsActive(false)
+      /*setIsActive(false)*/
       console.log(formData)
       try {
         const response = await axios.post('http://localhost:8000/desv_form/submit_data/', formData);
