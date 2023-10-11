@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 
-const EvaluameFormButton = ({ formData }) => {
+const EvaluameFormButton = ({ formData, isActive, setIsActive }) => {  
 
     const handleButtonClick = async (e) => {
-      event.preventDefault();
+      e.preventDefault();
       console.log("Enviando datos...")
+      setIsActive(false)
+      console.log(formData)
       try {
         const response = await axios.post('http://localhost:8000/desv_form/submit_data/', formData);
         console.log(response.data.message);
@@ -16,13 +18,15 @@ const EvaluameFormButton = ({ formData }) => {
     };
 
   return (
-    <button
-        className="bg-blue-500 hover:bg-blue-600 text-white font-semibold pb-2 pt-0 px-4 rounded mb-4 w-full"
-        onClick={handleButtonClick}>
-        <div className="flex flex-col items-center">        
-            <span className="mt-2">Enviar mis datos</span>
-        </div>
-    </button>
+    <div>
+      <button
+          className="bg-blue-500 hover:bg-blue-600 text-white font-semibold pb-2 pt-0 px-4 rounded mb-4 w-full"
+          onClick={handleButtonClick}>
+          <div className="flex flex-col items-center">        
+              <span className="mt-2">Enviar mis datos</span>
+          </div>
+      </button>
+    </div>
   );
 };
 
