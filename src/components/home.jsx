@@ -8,7 +8,7 @@ const Home_page = () => {
   const [evaluameStatus, setEvaluameStatus] = useState(true);
 
   return (
-      <div className="flex flex-col items-center justify-center h-screen">
+      <div className="flex flex-col items-center justify-center min-h-screen flex items-center justify-center p-2">
         {evaluameStatus ? <ButtonsGrid setEvaluameStatus={setEvaluameStatus}/>:
          <EvaluameForm />}
       </div>  
