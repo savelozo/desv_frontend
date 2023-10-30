@@ -11,11 +11,17 @@ import EvaluameButton from './evaluameButton';
 const ButtonsGrid = ( { setEvaluameStatus } ) => {
 
   const [buttonsStatus, setButtonsStatus] = useState(Array(buttonsLabel.length).fill(false));
+  const [buttonDisabled, setButtonDisabled] = useState(true);
 
   const handleButtonStatusChange = (index) => {
     const newButtonsStatus = [...buttonsStatus];
     newButtonsStatus[index] = !newButtonsStatus[index];
     setButtonsStatus(newButtonsStatus);
+    if (newButtonsStatus.filter((item) => item === true).length){
+      setButtonDisabled(false)
+    } else {
+      setButtonDisabled(true)
+    }    
   };
 
   return (
@@ -32,9 +38,12 @@ const ButtonsGrid = ( { setEvaluameStatus } ) => {
         ))}        
       </div>
       <div className="flex justify-center">
-        <EvaluameButton buttonKey={999} 
+        <EvaluameButton 
+            buttonKey={999} 
             buttonsStatus={buttonsStatus} 
-            setEvaluameStatus={setEvaluameStatus}/>
+            setEvaluameStatus={setEvaluameStatus}
+            disabled={buttonDisabled}
+          />
       </div>
     </div>
   );

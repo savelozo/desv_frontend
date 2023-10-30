@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import EvaluameFormButton from './forms-components/evaluameButtonForm';
 import LoadingComponent from './loadingComponent';
+import occupations from './data_load/ocupations';
+import countries from './data_load/countries';
+import regions from './data_load/regions';
+import regions_commmunes from './data_load/communes';
 
 const EvaluameForm = () => {
   const [isActive, setIsActive] = useState(true);
@@ -10,12 +14,16 @@ const EvaluameForm = () => {
     lastName: '',
     email: '',
     birthdate: '',
-    nationality: '',
+    nationality: 'Sí',
     address: '',
     incomeLevel: 'Entre $0 y $500.000',
     educationLevel: 'Básica Incompleta',
     employmentStatus: 'Cesante',
     industry: 'Servicios financieros y empresariales',
+    occupation: '',
+    country: "",
+    region: "",
+    commune: ""
   }); 
 
   // Manejar cambios en la selección de situación laboral
@@ -73,16 +81,69 @@ const EvaluameForm = () => {
           </div>
           <div className="mb-4">
             <label htmlFor="nationality" className="block font-medium mb-2">Nacionalidad</label>
-            <input 
-              type="text" 
+            <select 
               id="nationality" 
               className="w-full border rounded px-3 py-2"
               value={formData.nationality}
               onChange={(e) => handleFieldChange("nationality", e.target.value)}  
-            />
+            >
+            <option value="Sí">Sí</option>
+            <option value="No">No</option>
+            </select>
           </div>
-          <div className="mb-4">
-            <label htmlFor="address" className="block font-medium mb-2">Domicilio</label>
+          <div className="mb-4">              
+              <label htmlFor="select country" className="block font-medium mb-2">Selecciona tu país de residencia:</label>
+              <select 
+                id="country"
+                className="w-full border rounded px-3 py-2"
+                onChange={(e) => handleFieldChange("country", e.target.value)} 
+                >
+                <option value="">Selecciona una opción</option>
+                {countries.map((country, index) => (
+                  <option key={index} value={country}>
+                    {country}
+                  </option>
+                ))}
+              </select>
+          </div>
+          {(formData.country == "Chile") && (
+            <div className="mb-4">              
+              <label htmlFor="select region" className="block font-medium mb-2">Selecciona tu región de residencia:</label>
+              <select 
+                id="region"
+                className="w-full border rounded px-3 py-2"
+                onChange={(e) => handleFieldChange("region", e.target.value)} 
+                >
+                <option value="">Selecciona una opción</option>
+                {regions.map((region, index) => (
+                  <option key={index} value={region}>
+                    {region}
+                  </option>
+                ))}
+              </select>
+            </div>)
+          }
+          {(formData.region) && (
+              <div className="mb-4">              
+                <label htmlFor="select commune" className="block font-medium mb-2">Selecciona tu comuna de residencia:</label>
+                <select 
+                  id="commune"
+                  className="w-full border rounded px-3 py-2"
+                  onChange={(e) => handleFieldChange("commune", e.target.value)} 
+                  >
+                  <option value="">Selecciona una opción</option>
+                  {regions_commmunes[formData.region].map((commune, index) => (
+                    <option key={index} value={commune}>
+                      {commune}
+                    </option>
+                  ))}
+                </select>
+            </div>
+            )            
+          }
+          {(formData.country) && (
+            <div className="mb-4">
+            <label htmlFor="select address" className="block font-medium mb-2">Domicilio</label>
             <input 
               type="address" 
               id="address" 
@@ -90,9 +151,11 @@ const EvaluameForm = () => {
               value={formData.address}
               onChange={(e) => handleFieldChange("address", e.target.value)} 
             />
-          </div>
+            </div>
+            )
+          }
           <div className="mb-4">
-            <label htmlFor="selectOption" className="block font-medium mb-2">Elija su nivel de ingresos:</label>
+            <label htmlFor="select income level" className="block font-medium mb-2">Elija su nivel de ingresos:</label>
             <select 
               id="selectOption" 
               className="w-full border rounded px-3 py-2"
@@ -107,7 +170,7 @@ const EvaluameForm = () => {
             </select>
           </div>
           <div className="mb-4">
-            <label htmlFor="selectOption" className="block font-medium mb-2">Elijs su nivel de estudios:</label>
+            <label htmlFor="select education level" className="block font-medium mb-2">Elijs su nivel de estudios:</label>
             <select 
               id="selectOption" 
               className="w-full border rounded px-3 py-2"
@@ -127,7 +190,7 @@ const EvaluameForm = () => {
             </select>
           </div>
           <div className="mb-4">
-            <label htmlFor="selectEmploymentStatus" className="block font-medium mb-2">Elija su situación laboral:</label>
+            <label htmlFor="select employment status" className="block font-medium mb-2">Elija su situación laboral:</label>
             <select
               id="selectEmploymentStatus"
               className="w-full border rounded px-3 py-2"
@@ -140,8 +203,8 @@ const EvaluameForm = () => {
             </select>
           </div>
           {(formData.employmentStatus == 'Dependent' || formData.employmentStatus == 'Independent') && (
-          <div className="mb-4">
-              <label htmlFor="selectIndustry" className="block font-medium mb-2">Elige el tipo de industria en que se desempeña:</label>
+            <div className="mb-4">
+              <label htmlFor="select industry" className="block font-medium mb-2">Elige el tipo de industria en que se desempeña:</label>
               <select 
                 id="selectIndustry" 
                 className="w-full border rounded px-3 py-2"
@@ -161,6 +224,22 @@ const EvaluameForm = () => {
                 <option value="Electricidad, gas, agua y gestión de desechos">Electricidad, gas, agua y gestión de desechos</option>
                 <option value="Comunicaciones y servicios de información">Comunicaciones y servicios de información</option>
                 <option value="Pesca">Pesca</option>
+              </select>
+            </div>
+          )}
+          {(formData.employmentStatus == 'Dependent' || formData.employmentStatus == 'Independent') && (
+            <div className="mb-4">              
+              <label htmlFor="occupation" className="block font-medium mb-2">Selecciona tu ocupación:</label>
+              <select 
+                id="occupation"
+                className="w-full border rounded px-3 py-2"
+                onChange={(e) => handleFieldChange("occupation", e.target.value)} 
+                >
+                {occupations.map((occupation, index) => (
+                  <option key={index} value={occupation}>
+                    {occupation}
+                  </option>
+                ))}
               </select>
             </div>
           )}
