@@ -3,14 +3,13 @@ import React, { useState } from 'react';
 import SelectionButton from './selectionButton';
 import EvaluameButton from './evaluameButton';
 
-  const buttonsLabel = [
-    'Casa', 'Auto', 'Quinchito', 'Jubilación',
-    'Inversión', 'Ahorro', 'Reunificación de deuda', 'Comenzar negocio'
-  ];
+const buttonsLabel = [
+  'Casa', 'Auto', 'Quinchito', 'Jubilación',
+  'Inversión', 'Ahorro', 'Reunificación de deuda', 'Comenzar negocio'
+];
 
-const ButtonsGrid = ( { setEvaluameStatus } ) => {
+const ButtonsGrid = ( { setEvaluameStatus, buttonsStatus, setButtonsStatus } ) => {
 
-  const [buttonsStatus, setButtonsStatus] = useState(Array(buttonsLabel.length).fill(false));
   const [buttonDisabled, setButtonDisabled] = useState(true);
 
   const handleButtonStatusChange = (index) => {

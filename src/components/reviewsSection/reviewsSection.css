@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+
+.carouselSlide h1{
+    font-size: 1.3em;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 100;
+}
+
+.carouselSlide h2{
+    font-size: 2.5em;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+}
+
+.underline-title {
+    position: relative;
+    display: inline-block; /* Esto asegura que el span no ocupe el 100% del ancho */
+  }
+  
+.underline-title::after {
+    content: '';
+    position: absolute;
+    bottom: 3px; /* Ajusta la posición del subrayado según necesites */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%; /* Ancho del subrayado */
+    height: 1px; /* Grosor del subrayado */
+    background-color: white; /* Color del subrayado */
+}
+  

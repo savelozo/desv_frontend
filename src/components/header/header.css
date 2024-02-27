@@ -1,0 +1,41 @@
+/* Header.css */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em 1em;
+    background: #f8f8f8;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: 1000;
+  }
+  
+  .header__brand {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+  
+  .header__nav .nav__list {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .header__nav .nav__item {
+    margin-left: 1em;
+  }
+  
+  .header__nav .nav__item a {
+    text-decoration: none;
+    color: #333; /* Puedes cambiar el color del texto según tu preferencia */
+    font-size: 1em;
+  }
+  
+  .header__nav .nav__item a:hover {
+    text-decoration: underline;
+  }
+  
