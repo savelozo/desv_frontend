@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+
+.about-li {
+    font-size: 1.25em;
+    margin: 0.5em 0;
+    font-family: 'Raleway', sans-serif;
+}
+
+.about-li h2 {
+    color: rgb(89, 51, 170);
+    font-weight: bold;
+}

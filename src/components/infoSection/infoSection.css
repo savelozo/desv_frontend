@@ -1,0 +1,15 @@
+.infoSection {
+    padding: 4em;
+    text-align: center;
+  }
+  
+  .infoSection h2 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+  }
+  
+  .infoSection p {
+    font-size: 1em;
+    margin-bottom: 1em;
+  }
+  

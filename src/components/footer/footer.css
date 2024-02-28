@@ -1,0 +1,32 @@
+/* Footer.css */
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .footer__contact h3,
+  .footer__social-media h3 {
+    margin-top: 0;
+  }
+  
+  .footer p {
+    margin: 5px 0;
+  }
+  
+  /* Estilos para pantallas pequeñas */
+  @media (max-width: 768px) {
+    .footer {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .footer__contact,
+    .footer__social-media {
+      margin-bottom: 20px;
+    }
+  }
+  

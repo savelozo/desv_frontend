@@ -1,0 +1,30 @@
+/* Establece la posición inicial y la transición para el formulario que entra */
+.form-enter {
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Establece la posición final para el formulario que entra (centro) */
+.form-enter-active {
+    transform: translateX(0);
+}
+
+/* Establece la posición inicial para el formulario que sale (centro) */
+.form-exit {
+    transform: translateX(0);
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Establece la posición final para el formulario que sale (movido hacia la izquierda) */
+.form-exit-active {
+    transform: translateX(-100%);
+}
+
+/* Estilo para botones de formulario de evaluación */
+.nextPart-btn {
+    color: white;
+}
+
+.previousPart-btn {
+    color: white;
+}
