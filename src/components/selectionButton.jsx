@@ -21,7 +21,7 @@ const SelectionButton = ({ imgBtn, buttonLabel, changeStatusButton }) => {
     >
       <div className="flex flex-col items-center">
         {svg_list[imgBtn - 1]}
-        <span className="mt-2">{buttonLabel}</span>
+        <span className="mt-2 text-violet-600">{buttonLabel}</span>
       </div>
     </button>
   );

@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400&display=swap');
+
+.hero-btn {
+    background-color: rgb(114,9,183);
+    color: white;
+    font-size: 1.25em;
+    margin: 0.5em 0;
+    max-width: 40%;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+}
