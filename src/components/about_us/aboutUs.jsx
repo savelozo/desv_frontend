@@ -2,6 +2,7 @@ import React from 'react';
 import './aboutUs.css';
 
 const AboutUsSection = () => {
+
   return (
     <div className="bg-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -12,7 +13,7 @@ const AboutUsSection = () => {
         <div className="mt-10">
           <ul className="md:grid md:grid-cols-3 md:gap-8">
             <li className='about-li'>
-              <div className="flex flex-col items-center text-center px-8 about-li">
+              <div className="flex flex-col items-center text-center px-8">
                 <div className="flex-shrink-0">
                 <svg width="50" height="50" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
                   <g>
@@ -41,7 +42,7 @@ const AboutUsSection = () => {
                   </svg>
                 </div>
                 <div className="mt-6 pb-2">
-                  <h2 className="text-lg leading-6 font-medium text-gray-900">
+                  <h2 className="text-lg leading-6 font-medium">
                     Nuestra misión
                   </h2>
                   <p className="mt-2 text-base leading-6 text-gray-500">
@@ -58,7 +59,7 @@ const AboutUsSection = () => {
                   </svg>
                 </div>
                 <div className="mt-6 pb-2">
-                  <h2 className="text-lg leading-6 font-medium text-gray-900">
+                  <h2 className="text-lg leading-6 font-medium">
                     Tecnología
                   </h2>
                   <p className="mt-2 text-base leading-6 text-gray-500">

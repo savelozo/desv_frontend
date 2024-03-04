@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+.contactForm {
+    background-image: url('/images/form_background.webp');
+    position: relative;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+  }
+
+.contactForm::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(6, 21, 81, 0.75); /* negro con 50% opacidad */
+    z-index: 1;
+}
+
+/* Asegúrate de posicionar los elementos hijos del div relativamente al div y por encima de la capa de opacidad */
+.contactForm > * {
+    position: relative;
+    z-index: 2;
+}

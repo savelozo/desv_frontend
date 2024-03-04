@@ -3,26 +3,32 @@ import './infoSection.css';
 
 const InfoSection = ({ title, content }) => {
   return (
-    <div className="bg-blue-50 py-10">
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
-          {/* Columna izquierda con el texto y los círculos como índices */}
-          <div className="flex-1 flex items-center">
-            <div className="space-y-2">
-              <h2 className="text-2xl text-gray-700 font-semibold">Cómo funciona DVS</h2>
-              <p className="text-gray-600">Inteligente</p>
-              <p className="text-sm text-gray-500">Evaluar tu riesgo financiero nunca fue tan fácil...</p>
-            </div>
-          </div>
-          
-          {/* Columna derecha con la imagen o el SVG */}
-          <div className="flex-1">
-            {/* Asumiendo que tienes un componente SVG llamado 'AnalyticsSVG' */}
-            {/* <AnalyticsSVG className="w-full h-auto text-purple-600" /> */}
-          </div>
+    <section className="dvs-section bg-light-blue px-10 py-20">
+      <div className="container mx-auto flex justify-between items-center p-10">
+        <div className="dvs-graphics flex-1">
+          {/* Aquí irían tus SVG o imágenes */}
+        </div>
+        <div className="dvs-text flex-1">
+          <h2 className="text-title mb-4">Inteligente</h2>
+          <p className="text-lg">
+            Evaluar tu riesgo financiero nunca fue tan fácil. Con DVS, obtén un
+            diagnóstico personalizado en minutos. Nuestra tecnología analiza tus datos
+            financieros y te proporciona información valiosa para tomar decisiones informadas.
+          </p>
         </div>
       </div>
-    </div>
+      <div className="container mx-auto flex justify-between items-center p-10">
+        <div className="dvs-text flex-1">
+          <h2 className="text-title mb-4">Rápido</h2>
+          <p className="text-lg">
+          Con DVS, obtén un diagnóstico financiero personalizado en minutos. Ahorra tiempo y toma decisiones financieras informadas de manera rápida y fácil.
+          </p>
+        </div>
+        <div className="dvs-graphics flex-1">
+          {/* Aquí irían tus SVG o imágenes */}
+        </div>
+      </div>
+    </section>
   );
 };
 
