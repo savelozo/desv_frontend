@@ -1,15 +1,42 @@
-.infoSection {
-    padding: 4em;
-    text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+.dvs-section {
+  background-color: #E0E7FF; /* Este es un color de ejemplo, ajusta según tu diseño */
+  color: #1A202C; /* Este es un color de texto de ejemplo, ajusta según tu diseño */
+}
+
+.dvs-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.dvs-section .text-lg{
+  font-size: 1em;
+  margin: 0.5em 0;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+}
+
+.dvs-section .text-title{
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 2.25rem;
+}
+
+@media (min-width: 768px) {
+  .dvs-section .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
-  
-  .infoSection h2 {
-    font-size: 2em;
-    margin-bottom: 0.5em;
-  }
-  
-  .infoSection p {
-    font-size: 1em;
-    margin-bottom: 1em;
-  }
-  
+}
+
+.dvs-section .dvs-graphics {
+  /* Aquí puedes agregar estilos para tus gráficos */
+}
+
+.dvs-section .dvs-text {
+  max-width: 500px; /* O el ancho que prefieras */
+}

@@ -9,6 +9,7 @@ import InfoSection from './infoSection/infoSection';
 import ListServiceCards from './service_cards/listCards';
 import AboutUsSection from './about_us/aboutUs';
 import ReviewsSection from './reviewsSection/reviewsSection'
+import ContactForm from './contact_form/contactForm';
 
 const data = {
   'title': "Obtén tu crédito",
@@ -23,18 +24,42 @@ const buttonsLabel = [
 const Home_page = () => {
 
   const formSectionRef = useRef(null);
+  const AboutUsRef = useRef(null);
+  const contactRef = useRef(null)
   const [evaluameStatus, setEvaluameStatus] = useState(true);
   const [buttonsStatus, setButtonsStatus] = useState(Array(buttonsLabel.length).fill(false));
 
-  const scrollToInfoSection = () => {
+  const scrollToFormSection = () => {
     formSectionRef.current.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const scrollToAboutUs = () => {
+    if (AboutUsRef.current) {
+      const aboutUsPosition = AboutUsRef.current.getBoundingClientRect().top;
+      const offsetPosition = aboutUsPosition + window.pageYOffset - (window.innerHeight / 4);
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  const scrollToContactForm = () => {
+    contactRef.current.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
     <div>
-      <Header />
-      <Hero onButtonClick={scrollToInfoSection}/>
-      <AboutUsSection />
+      <Header 
+        scrollToAboutUs={scrollToAboutUs} 
+        scrollToContactForm={scrollToContactForm}
+      />
+      <Hero 
+        onButtonClick={scrollToFormSection}
+      />
+      <div ref={AboutUsRef}>
+        <AboutUsSection />
+      </div>
       <InfoSection title={data.title} content={data.content}/>
       <div className="flex flex-col items-center justify-center min-h-screen flex items-center justify-center p-2" ref={formSectionRef}>
         {evaluameStatus ? <ButtonsGrid setEvaluameStatus={setEvaluameStatus} 
@@ -45,7 +70,10 @@ const Home_page = () => {
          <EvaluameForm buttonsStatus={buttonsStatus}/>}
       </div>
       <ReviewsSection />
-      <ListServiceCards />
+      {/* <ListServiceCards /> */}
+      <div ref={contactRef}>
+        <ContactForm />
+      </div>
       <Footer />
     </div>
   );
